@@ -39,7 +39,7 @@ Character |Description
  -------- | ---------- 
 `0-9` | Push this number to the stack
 `a-f` | Push 10, ... ,15 to the stack
-`+` | Pop `a` and `b`, then push `a+b`.
+`+` | Pop `a` and `b`, then push `a+b`.
 `-` | Pop `a` and `b`, then push `a-b`.
 `*` | Pop `a` and `b`, then push `a*b`.
 `/` | Pop `a` and `b`, then push `floor(b/a)`, provided that `a` is not zero.
@@ -50,7 +50,7 @@ Character |Description
 `k` | Pop `n`. Iterate next instruction `n` times.
 `>` | Move right.
 `<` | Move left.
-`^` | Move up.
+`^` | Move up.
 `v` | Move down.
 `?` | Move in a random direction.
 `[` | Turn the IP CW 90 degrees.
@@ -60,12 +60,12 @@ Character |Description
 `_` | Pop `a`. If `a = 0`, move right, otherwise move left.
 <code>&#124;</code> | Pop `a`. If `a = 0` , move down, otherwise move up.
 `"` | Start string mode. Push each characters ASCII value all the way up to the next ".
-`'` | Start string mode for the next character only.
+`'` | Start string mode for the next character only.
 `(` | Load fingerprint (not implemented yet in this interpreter).
-`)` | Unload fingerprint (not implemented yet in this interpreter).
-`A-Z` | Defined by fingerprints.
-`:` | Duplicate value on top of the stack.
-`\` | Swap the two values on top of the stack.
+`)` | Unload fingerprint (not implemented yet in this interpreter).
+`A-Z` | Defined by fingerprints.
+`:` | Duplicate value on top of the stack.
+`\` | Swap the two values on top of the stack.
 `$` | Remove the value on top of the stack.
 `n` | Empty stack.
 `.` | Pop `a`. Output the integer value of `a`.
@@ -77,8 +77,8 @@ Character |Description
 `g` | Pop `y` and `x` , the push the ASCII value of the character in position `(x,y)` *relative to the storage offset*.
 `s` | Pop `v` and push the ASCII value of the character to the next cell.
 `&` | Prompt user for a number and push it.
-`~` | Prompt user for a character and push its ASCII value.
-`{` | Pop `n`. Push a new stack in the stack stack. Pop `n` elements from the SOSS and place them in the new TOSS (while preserving the ordering). Also pop the storage offset into SOSS.
+`~` | Prompt user for a character and push its ASCII value.
+`{` | Pop `n`. Push a new stack in the stack stack. Pop `n` elements from the SOSS and place them in the new TOSS (while preserving the ordering). Also pop the storage offset into SOSS.
 `}` | Pop `n`. Pop `n` elements from the TOSS and place them in the SOSS (while presering the ordering). Pop a stack from the stack stack.
 `u` | Pop `n`. If `n > 0`, pop `n` elements from the SOSS and push each element to the TOSS (thus reversing their order). If `n < 0`, transfer `n` elements in the other direction.
 `y` | Get sysinfo (not implemented yet in this interpreter).

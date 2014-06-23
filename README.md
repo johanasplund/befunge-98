@@ -79,7 +79,7 @@ Character |Description
 `&` | Prompt user for a number and push it.
 `~` | Prompt user for a character and push its ASCII value.
 `{` | Pop `n`. Push a new stack in the stack stack. Pop `n` elements from the SOSS and place them in the new TOSS (while preserving the ordering). Also pop the storage offset into SOSS.
-`}` | Pop `n`. Pop `n` elements from the TOSS and place them in the SOSS (while presering the ordering). Pop a stack from the stack stack.
+`}` | Pop `n`. Pop `n` elements from the TOSS and place them in the SOSS (while preserving the ordering). Pop a stack from the stack stack.
 `u` | Pop `n`. If `n > 0`, pop `n` elements from the SOSS and push each element to the TOSS (thus reversing their order). If `n < 0`, transfer `n` elements in the other direction.
 `y` | Get sysinfo (not implemented yet in this interpreter).
 `t` | Split cursor to allow multiple cursors (not implemented yet in this interpreter).

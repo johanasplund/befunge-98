@@ -47,7 +47,7 @@ Character |Description
 `w` | Pop `a` and `b`. Do instruction `]` if `a > b` otherwise if `b > a` do instruction `[`. If `a = b` do nothing.
 `k` | Pop `n`. Iterate next instruction `n` times.
 `>` | Move right.
-`<^ | Move left.
+`<` | Move left.
 `^` | Move up.
 `v` | Move down.
 `?` | Move in a random direction.

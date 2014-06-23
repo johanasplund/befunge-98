@@ -30,7 +30,9 @@ The font *Inconsolata*, which is used in the interpreter, is owned by [Raph Levi
 # Quick reference for Befunge-98
 
 *TOSS = Top of stack stack*
+
 *SOSS = Second on stack stack*
+
 *IP = Instruction pointer*
 
 Character |Description 

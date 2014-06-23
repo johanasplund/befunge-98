@@ -37,8 +37,8 @@ The font *Inconsolata*, which is used in the interpreter, is owned by [Raph Levi
 
 Character |Description 
  -------- | ---------- 
-`0-9` | Push this number to the stack
-`a-f` | Push 10, ... ,15 to the stack
+`0-9` | Push this number to the stack.
+`a-f` | Push 10, ... ,15 to the stack.
 `+` | Pop `a` and `b`, then push `a+b`.
 `-` | Pop `a` and `b`, then push `a-b`.
 `*` | Pop `a` and `b`, then push `a*b`.

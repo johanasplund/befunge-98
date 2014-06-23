@@ -73,7 +73,7 @@ Character |Description
 `j` | Pop `n`. Skip the next `n` cells.
 `p` | Pop `y`, `y` and `v`. Change the character in position `(x,y)` *relative to the storage offset* to `chr(v)`.
 `g` | Pop `y` and `x` , the push the ASCII value of the character in position `(x,y)` *relative to the storage offset*.
-`s` | Pop `v` and push the ASCII value of the character in position `(x+dx, y+dy)`, where `(dx, dy)` is the current direction vector of the IP.
+`s` | Pop `v` and push the ASCII value of the character to the next cell.
 `&` | Prompt user for a number and push it.
 `~` | Prompt user for a character and push its ASCII value.
 `{` | Pop `n`. Push a new stack in the stack stack. Pop `n` elements from the SOSS and place them in the new TOSS (while preserving the ordering). Also pop the storage offset into SOSS.

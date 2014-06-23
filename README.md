@@ -43,7 +43,7 @@ Character |Description
 `/` | Pop `a` and `b`, then push `floor(b/a)`, provided that `a` is not zero.
 `%` | Pop `a` and `b`, then push `a (mod b)`.
 `!` | Pop `a`. If `a = 0`, push 1, otherwise push 0.
-` ` ` | Pop `a` and `b`, then push 1 if `b > a`, otherwise 0.
+<code>`</code> | Pop `a` and `b`, then push 1 if `b > a`, otherwise 0.
 `w` | Pop `a` and `b`. Do instruction `]` if `a > b` otherwise if `b > a` do instruction `[`. If `a = b` do nothing.
 `k` | Pop `n`. Iterate next instruction `n` times.
 `>` | Move right.

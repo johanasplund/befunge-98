@@ -104,26 +104,25 @@ def read_int():
 def output_ascii():
     outtext = fp.chhr(pop(ini.stackstack[-1]))
     if outtext == "\n":
-        ini.outline += 1
-        ini.outcount = -1
+        ini._outline += 1
+        ini._outcount = -1
         out = ini.stackfont.render("", 1, ini.STACK_OUTPUT_COLOR)
     else:
         out = ini.stackfont.render(outtext, 1,
                                    ini.STACK_OUTPUT_COLOR)
-    ini.outsurf.blit(out,
-                     (ini.STACKCHAR_WIDTH * ini.outcount,
-                      ini.STACKCHAR_HEIGHT * ini.outline))
-    ini.outcount += len(outtext)
+    ini.outsurf.blit(
+        out, (ini.STACK_CHAR_WIDTH * ini._outcount,
+              ini.STACK_CHAR_HEIGHT * ini._outline))
+    ini._outcount += len(outtext)
 
 
 def output_int():
     outint = str(pop(ini.stackstack[-1]))
-    out = ini.stackfont.render(outint, 1,
-                               ini.STACK_OUTPUT_COLOR)
+    out = ini.stackfont.render(outint, 1, ini.STACK_OUTPUT_COLOR)
     ini.outsurf.blit(
-        out, (ini.STACKCHAR_WIDTH * ini.outcount,
-              ini.STACKCHAR_HEIGHT * ini.outline))
-    ini.outcount += len(outint)
+        out, (ini.STACK_CHAR_WIDTH * ini._outcount,
+              ini.STACK_CHAR_HEIGHT * ini._outline))
+    ini._outcount += len(outint)
 
 
 def do_instruction(character):

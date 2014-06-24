@@ -21,7 +21,8 @@ operators = {
 # Global constants related to pygame
 CHAR_WIDTH = 12
 CHAR_HEIGHT = 28
-SCREEN_HEIGHT = the_field.Y * CHAR_HEIGHT + 200
+SCREEN_HEIGHT_MODIFIER = 300
+SCREEN_HEIGHT = the_field.Y * CHAR_HEIGHT + SCREEN_HEIGHT_MODIFIER
 SCREEN_WIDTH = the_field.X * CHAR_WIDTH + 500
 BG_COLOR = (52, 52, 52)
 STACK_BG_COLOR = (0, 0, 0, 100)
@@ -39,8 +40,8 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 background = pygame.Surface(screen.get_size()).convert()
 pointer_rect = pygame.Surface((CHAR_WIDTH, CHAR_HEIGHT), pygame.SRCALPHA)
 pointer_rect.fill(POINTER_COLOR)
-stacksurf = pygame.Surface((SCREEN_WIDTH, 200), pygame.SRCALPHA)
-outsurf = pygame.Surface((int(float(SCREEN_WIDTH) / 2.0), 200),
+stacksurf = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT_MODIFIER), pygame.SRCALPHA)
+outsurf = pygame.Surface((int(float(SCREEN_WIDTH) / 2.0), SCREEN_HEIGHT_MODIFIER),
                          pygame.SRCALPHA)
 pygame.display.set_caption("Befunge-98 Interpreter")
 # Pygame font inits

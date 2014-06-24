@@ -60,9 +60,11 @@ def initiate_new_run():
     '''
     # Background, stack and output surfaces
     ini.screen.blit(ini.background, (0, 0))
-    ini.screen.blit(ini.stacksurf, (0, ini.SCREEN_HEIGHT - 200))
+    ini.screen.blit(ini.stacksurf, (0, ini.SCREEN_HEIGHT -
+                                    ini.SCREEN_HEIGHT_MODIFIER))
     ini.screen.blit(ini.outsurf, (int(float(ini.SCREEN_WIDTH) / 2.0),
-                    ini.SCREEN_HEIGHT - 200))
+                    ini.SCREEN_HEIGHT -
+                    ini.SCREEN_HEIGHT_MODIFIER))
     # Stack titles
     toss_text = ini.stackfont.render("TOSS", 1, ini.STACK_OUTPUT_COLOR)
     soss_text = ini.stackfont.render("SOSS", 1, ini.SOSS_OUTPUT_COLOR)
@@ -84,10 +86,12 @@ def blit_statics():
     ini.stacksurf.fill(ini.STACK_BG_COLOR)
     # Blit surfaces to screen
     ini.screen.blit(ini.background, (0, 0))
-    ini.screen.blit(ini.stacksurf, (0, ini.SCREEN_HEIGHT - 200))
+    ini.screen.blit(ini.stacksurf, (0, ini.SCREEN_HEIGHT -
+                                    ini.SCREEN_HEIGHT_MODIFIER))
     ini.screen.blit(
         ini.outsurf, (int(float(ini.SCREEN_WIDTH) / 2.0),
-                      ini.SCREEN_HEIGHT - 200))
+                      ini.SCREEN_HEIGHT -
+                      ini.SCREEN_HEIGHT_MODIFIER))
     # Stack titles
     toss_text = ini.stackfont.render("TOSS", 1, ini.STACK_OUTPUT_COLOR)
     soss_text = ini.stackfont.render("SOSS", 1, ini.SOSS_OUTPUT_COLOR)

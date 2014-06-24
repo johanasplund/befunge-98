@@ -40,8 +40,10 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 background = pygame.Surface(screen.get_size()).convert()
 pointer_rect = pygame.Surface((CHAR_WIDTH, CHAR_HEIGHT), pygame.SRCALPHA)
 pointer_rect.fill(POINTER_COLOR)
-stacksurf = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT_MODIFIER), pygame.SRCALPHA)
-outsurf = pygame.Surface((int(float(SCREEN_WIDTH) / 2.0), SCREEN_HEIGHT_MODIFIER),
+stacksurf = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT_MODIFIER),
+                           pygame.SRCALPHA)
+outsurf = pygame.Surface((int(float(SCREEN_WIDTH) / 2.0),
+                         SCREEN_HEIGHT_MODIFIER),
                          pygame.SRCALPHA)
 pygame.display.set_caption("Befunge-98 Interpreter")
 # Pygame font inits

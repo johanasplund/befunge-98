@@ -9,13 +9,13 @@ The full technical specification of the Funge-98 languages can be found [here](h
 Johan Asplund
 
 ## How to use
-Run the script as ``python lib/bf98.py arg1 arg2``, where ``arg1`` is the befunge code, and where  ``arg2`` is an integer specifying the time between each iteration (one iteration = one step of the cursor) which defaults to 50 ms.
+Run the script as `python lib/bf98.py <befunge file> [speed]`.`speed` is an integer specifying the time (in ms) between each tick of the intstruction pointer, which defaults to 50.
 
 ### Controls
-- ``space`` to pause the code
-- ``r`` to reset the code
-- ``right arrow`` to step once
-- ``esc`` to quit
+- `space` to pause the code
+- `r` to reset the code
+- `right arrow` to step once
+- `esc` to quit
 
 ## TODO
 - Make the code ~~more structured~~ and/or clean up some

@@ -143,6 +143,12 @@ def load_code():
     '''
     Loads the Befunge code from an external file.
     '''
-    with open(sys.argv[1], "r") as c:
-        codelist = c.read().splitlines()
-    return codelist
+    try:
+        with open(sys.argv[1], "r") as c:
+            codelist = c.read().splitlines()
+        if codelist:
+            return codelist
+        else:
+            return [" "]
+    except IndexError:
+        raise IOError("Run as 'python bf98.py <befunge file> [speed]'")

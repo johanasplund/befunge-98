@@ -18,7 +18,7 @@ Run the script as ``python lib/bf98.py arg1 arg2``, where ``arg1`` is the befung
 - ``esc`` to quit
 
 ## TODO
-- Make the code ~more structured~~ and/or clean up some
+- Make the code ~~more structured~~ and/or clean up some
 - Add the `y` instruction
 - Add the `t` instruction (aka Concurrent Befunge-98)
 - Add fingerprints

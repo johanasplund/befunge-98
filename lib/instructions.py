@@ -30,7 +30,7 @@ def new_block():
         for n in range(-transfer_amount):
             transfer.append(0)
     # Push transfer elements
-    for t in transfer[::-1]:
+    for t in reversed(transfer):
         ini.stackstack[-1].append(t)
     # Get storage offset
     stor_off = ini.the_field.storage_offset
@@ -66,7 +66,7 @@ def end_block():
             for n in range(-transfer_amount):
                 pop(ini.stackstack[-2])
         # Push transfer elements
-        for t in transfer[::-1]:
+        for t in reversed(transfer):
             ini.stackstack[-2].append(t)
         # Pop ini.stackstack[-1]
         pop(ini.stackstack)

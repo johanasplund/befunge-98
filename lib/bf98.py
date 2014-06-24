@@ -38,7 +38,7 @@ def print_stack(stack, color, SOSS=False):
     '''
     Blits the TOSS and SOSS to the stack surface.
     '''
-    for x, s in enumerate(stack[::-1]):
+    for x, s in enumerate(reversed(stack)):
         try:
             printstack = ini.stackfont.render(
                 "{}. {} [{}] ({})".format(x + 1, s,

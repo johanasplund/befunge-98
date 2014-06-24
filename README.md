@@ -9,7 +9,7 @@ The full technical specification of the Funge-98 languages can be found [here](h
 Johan Asplund
 
 ## How to use
-Run the script as ``python befunge.py arg1 arg2``, where ``arg1`` is the befunge code, and where  ``arg2`` is an integer specifying the time between each iteration (one iteration = one step of the cursor) which defaults to 50 ms.
+Run the script as ``python lib/bf98.py arg1 arg2``, where ``arg1`` is the befunge code, and where  ``arg2`` is an integer specifying the time between each iteration (one iteration = one step of the cursor) which defaults to 50 ms.
 
 ### Controls
 - ``space`` to pause the code
@@ -18,7 +18,7 @@ Run the script as ``python befunge.py arg1 arg2``, where ``arg1`` is the befunge
 - ``esc`` to quit
 
 ## TODO
-- Make the code more structured and/or clean up some
+- Make the code ~more structured~~ and/or clean up some
 - Add the `y` instruction
 - Add the `t` instruction (aka Concurrent Befunge-98)
 - Add fingerprints

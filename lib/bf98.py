@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import pygame
 import field_and_pointer as fp
 import instructions as i
@@ -147,8 +147,8 @@ def run_code():
             print_stack(ini.stackstack[-2], ini.SOSS_OUTPUT_COLOR, SOSS=True)
         pygame.time.wait(ini.ARGS.SPEED)
     # Reinitiating the code, pointer and stackstack
-    ini.the_field = fp.Field(fp.codelist)
-    ini.pointer = fp.ini.Pointer((0, 0), (1, 0))
+    ini.the_field = fp.Field(fp.load_code())
+    ini.pointer = fp.Pointer((0, 0), (1, 0))
     ini.stackstack = [[]]
     run_code()
 

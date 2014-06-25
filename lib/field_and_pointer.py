@@ -2,6 +2,22 @@ import six
 import argparser as ap
 
 
+def load_code():
+    '''
+    Loads the Befunge code from an external file.
+    '''
+    ARGS = ap.parse_arguments()
+    try:
+        with open(ARGS.befunge_file, "r") as c:
+            codelist = c.read().splitlines()
+        if codelist:
+            return codelist
+        else:
+            return [" "]
+    except Exception as er:
+        ap.parser.error(str(er))
+
+
 class Field(object):
     '''
     This is the class handling the Funge-space, being the code field
@@ -43,8 +59,8 @@ class Pointer(Field):
     This is the class handling the instruction pointer, which inherits
     from the code field.
     '''
-    def __init__(self, init_pos, init_dir):
-        super().__init__(load_code())
+    def __init__(self, init_pos, init_dir, code=load_code()):
+        super().__init__(code)
         self._xy = init_pos
         self._direction = init_dir
         self._maxiters_k = 1
@@ -137,19 +153,3 @@ def chhr(tal):
         return " "
     else:
         return six.unichr(tal)
-
-
-def load_code():
-    '''
-    Loads the Befunge code from an external file.
-    '''
-    ARGS = ap.parse_arguments()
-    try:
-        with open(ARGS.befunge_file, "r") as c:
-            codelist = c.read().splitlines()
-        if codelist:
-            return codelist
-        else:
-            return [" "]
-    except FileNotFoundError as er:
-        ap.parser.error(str(er))

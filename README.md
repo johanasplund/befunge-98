@@ -9,7 +9,19 @@ The full technical specification of the Funge-98 languages can be found [here](h
 Johan Asplund
 
 ## How to use
-Run the script as `python lib/bf98.py <befunge file> [speed]`.`speed` is an integer specifying the time (in ms) between each tick of the intstruction pointer, which defaults to 50.
+```
+usage: bf98.py [-h] [-s SPEED] [-y] befunge_file
+
+A Befunge-98 interpreter written in pygame
+
+positional arguments:
+  befunge_file   the full path to a befunge file to be interpreted
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -s SPEED       specify the time between each tick (default: 50 ms)
+  -y, --sysinfo  show the environment variables used in the y instruction
+```
 
 ### Controls
 - `space` to pause the code

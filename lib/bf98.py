@@ -1,6 +1,5 @@
 #!/usr/bin/python
 import pygame
-import sys
 import field_and_pointer as fp
 import instructions as i
 import initialize as ini
@@ -146,11 +145,7 @@ def run_code():
         # Print SOSS if it exists
         if len(ini.stackstack) >= 2:
             print_stack(ini.stackstack[-2], ini.SOSS_OUTPUT_COLOR, SOSS=True)
-        try:
-            pygame.time.wait(int(sys.argv[2]))
-        except Exception:
-            print("The speed was not properly set. Using the default (50 ms).")
-            pygame.time.wait(50)
+        pygame.time.wait(ini.ARGS.SPEED)
     # Reinitiating the code, pointer and stackstack
     ini.the_field = fp.Field(fp.codelist)
     ini.pointer = fp.ini.Pointer((0, 0), (1, 0))

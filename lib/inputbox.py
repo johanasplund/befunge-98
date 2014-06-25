@@ -30,17 +30,17 @@ def display_box(screen, message):
     fontobject = pygame.font.Font("./font/Inconsolata.otf", 14)
     pygame.draw.rect(screen, (0, 0, 0),
                     ((screen.get_width() / 2) - 150,
-                    (screen.get_height() / 2) - 10,
-                    250, 20), 0)
+                     (screen.get_height() / 2) - 10,
+                     250, 20), 0)
     pygame.draw.rect(screen, (255, 255, 255),
                     ((screen.get_width() / 2) - 152,
-                    (screen.get_height() / 2) - 12,
-                    254, 24), 1)
+                     (screen.get_height() / 2) - 12,
+                     254, 24), 1)
 
     if len(message) != 0:
         screen.blit(fontobject.render(message, 1, (230, 200, 70)),
                     ((screen.get_width() / 2) - 150,
-                    (screen.get_height() / 2) - 10))
+                     (screen.get_height() / 2) - 10))
     pygame.display.flip()
 
 

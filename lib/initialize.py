@@ -1,5 +1,6 @@
 import pygame
 import field_and_pointer as fp
+import argparser as ap
 
 # Stack, field, pointer and the 2-input operators
 stackstack = [[]]
@@ -31,6 +32,7 @@ SOSS_OUTPUT_COLOR = (70, 230, 200)
 POINTER_COLOR = (255, 255, 255, 130)
 STACK_CHAR_HEIGHT = 16
 STACK_CHAR_WIDTH = 10
+ARGS = ap.parse_arguments()
 _paused = False
 _step_once = False
 _reset = False

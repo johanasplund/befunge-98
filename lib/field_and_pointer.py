@@ -1,5 +1,5 @@
 import six
-import sys
+import argparser as ap
 
 
 class Field(object):
@@ -143,12 +143,13 @@ def load_code():
     '''
     Loads the Befunge code from an external file.
     '''
+    ARGS = ap.parse_arguments()
     try:
-        with open(sys.argv[1], "r") as c:
+        with open(ARGS.befunge_file, "r") as c:
             codelist = c.read().splitlines()
         if codelist:
             return codelist
         else:
             return [" "]
-    except IndexError:
-        load_code(str(input("Enter a befunge file: ")))
+    except FileNotFoundError as er:
+        ap.parser.error(str(er))

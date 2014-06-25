@@ -16,7 +16,7 @@ def parse_arguments():
                         "file to be interpreted")
     helpmsg = "show the environment variables used in the y instruction"
     parser.add_argument("-y", "--sysinfo", action="version", help=helpmsg,
-                        version="Version 0.9\n"
+                        version="Version 0.9.0\n"
                                 "t is NOT implemented\n"
                                 "i is NOT implemented\n"
                                 "o is NOT implemented\n"

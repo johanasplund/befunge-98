@@ -14,6 +14,7 @@
 #
 # Only near the center of the screen is blitted to
 import pygame
+import bf98
 
 
 def get_key():
@@ -27,7 +28,9 @@ def get_key():
 
 def display_box(screen, message):
     """Print a message in a box in the middle of the screen"""
-    fontobject = pygame.font.Font("./font/Inconsolata.otf", 14)
+    fontobject = pygame.font.Font("../font/Inconsolata.otf", 14)
+    bf98.blit_statics()
+    bf98.initiate_new_run()
     pygame.draw.rect(screen, (0, 0, 0),
                     ((screen.get_width() / 2) - 150,
                      (screen.get_height() / 2) - 10,

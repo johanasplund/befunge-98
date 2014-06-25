@@ -34,6 +34,7 @@ def new_block():
         ini.stackstack[-1].append(t)
     # Get storage offset
     stor_off = ini.the_field.storage_offset
+    print(stor_off)
     # Push storage offset to SOSS
     ini.stackstack[-2].append(stor_off[0])
     ini.stackstack[-2].append(stor_off[1])

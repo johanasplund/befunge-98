@@ -151,4 +151,4 @@ def load_code():
         else:
             return [" "]
     except IndexError:
-        raise IOError("Run as 'python bf98.py <befunge file> [speed]'")
+        load_code(str(input("Enter a befunge file: ")))

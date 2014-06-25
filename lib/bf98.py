@@ -149,6 +149,7 @@ def run_code():
         try:
             pygame.time.wait(int(sys.argv[2]))
         except Exception:
+            print("The speed was not properly set. Using the default (50 ms).")
             pygame.time.wait(50)
     # Reinitiating the code, pointer and stackstack
     ini.the_field = fp.Field(fp.codelist)

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 import pygame
 import field_and_pointer as fp
 import instructions as i

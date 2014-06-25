@@ -1,4 +1,4 @@
-## modified by Johan Asplund, for my befunge-93 interpreter
+## modified by Johan Asplund, for my befunge-93 and 98 interpreters
 
 # by Timothy Downs, inputbox written for my map editor
 

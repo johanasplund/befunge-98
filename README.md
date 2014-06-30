@@ -30,7 +30,7 @@ optional arguments:
 - `esc` to quit
 
 ## TODO
-- Make the code ~~more structured~~ and/or clean up some
+- ~~Make the code more structured and/or clean up some~~
 - Add the `y` instruction
 - Add the `t` instruction (aka Concurrent Befunge-98)
 - Add fingerprints

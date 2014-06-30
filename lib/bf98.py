@@ -146,10 +146,15 @@ def run_code():
         if len(ini.stackstack) >= 2:
             print_stack(ini.stackstack[-2], ini.SOSS_OUTPUT_COLOR, SOSS=True)
         pygame.time.wait(ini.ARGS.SPEED)
-    # Reinitiating the code, pointer and stackstack
+    # Reinitiating the code, pointer, stackstack and output panel
     ini.the_field = fp.Field(fp.load_code())
     ini.pointer = fp.Pointer((0, 0), (1, 0))
     ini.stackstack = [[]]
+    # Reset output field
+    ini.outsurf.fill((0, 0, 0, 0))
+    ini._outcount = 0
+    ini._outline = 0
+    ini._instring = ""
     run_code()
 
 if __name__ == '__main__':

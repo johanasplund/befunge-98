@@ -253,6 +253,7 @@ def do_instruction(character):
             ini.pointer.do_nothing = False
         elif ini.pointer.read or ini.pointer.read_once:
             ini.pointer.read_once = False
+            ini.pointer.read_space = True
             read_char = ord(character)
             if read_char == 32 and ini.pointer.read_space:
                 ini.pointer.read_space = False

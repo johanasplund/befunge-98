@@ -145,6 +145,7 @@ def run_code():
         # Print SOSS if it exists
         if len(ini.stackstack) >= 2:
             print_stack(ini.stackstack[-2], ini.SOSS_OUTPUT_COLOR, SOSS=True)
+        blit_statics()
         pygame.time.wait(ini.ARGS.SPEED)
     # Reinitiating the code, pointer, stackstack and output panel
     ini.the_field = fp.Field(fp.load_code())

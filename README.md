@@ -10,9 +10,10 @@ Johan Asplund
 
 ## How to use
 ```
-usage: bf98.py [-h] [-s SPEED] [-y] befunge_file
+$ python bf98.py -h
+usage: bf98.py [-h] [-s SPEED] [-o] [-y] befunge_file
 
-A Befunge-98 interpreter written in pygame
+A Befunge-98 interpreter written in pygame.
 
 positional arguments:
   befunge_file   the full path to a befunge file to be interpreted
@@ -20,6 +21,7 @@ positional arguments:
 optional arguments:
   -h, --help     show this help message and exit
   -s SPEED       specify the time between each tick (default: 50 ms)
+  -o             only show the output of the program in the shell
   -y, --sysinfo  show the environment variables used in the y instruction
 ```
 
@@ -31,7 +33,7 @@ optional arguments:
 
 ## TODO
 - ~~Make the code more structured and/or clean up some~~
-- Add output only mode
+- ~~Add output only mode~~
 - Add the `y` instruction
 - Add the `t` instruction (aka Concurrent Befunge-98)
 - Add fingerprints

@@ -137,16 +137,18 @@ def run_code():
         if ini._reset:
             ini._reset = False
             break
-        initiate_new_run()
-        blit_statics()
+        if not ini.ARGS.OUTPUT_MODE:
+            initiate_new_run()
+            blit_statics()
         i.do_instruction(ini.pointer.current_char())
-        blit_statics()
-        # Print stack (TOSS)
-        print_stack(ini.stackstack[-1], ini.STACK_OUTPUT_COLOR)
-        # Print SOSS if it exists
-        if len(ini.stackstack) >= 2:
-            print_stack(ini.stackstack[-2], ini.SOSS_OUTPUT_COLOR, SOSS=True)
-        pygame.time.wait(ini.ARGS.SPEED)
+        if not ini.ARGS.OUTPUT_MODE:
+            blit_statics()
+            # Print stack (TOSS)
+            print_stack(ini.stackstack[-1], ini.STACK_OUTPUT_COLOR)
+            # Print SOSS if it exists
+            if len(ini.stackstack) >= 2:
+                print_stack(ini.stackstack[-2], ini.SOSS_OUTPUT_COLOR, SOSS=True)
+            pygame.time.wait(ini.ARGS.SPEED)
     # Reinitiating the code, pointer, stackstack and output panel
     ini.the_field = fp.Field(fp.load_code())
     ini.pointer = fp.Pointer((0, 0), (1, 0))

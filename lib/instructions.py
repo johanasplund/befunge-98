@@ -78,8 +78,12 @@ def read_string():
     Execution of the ~ instruction
     '''
     if not ini.instring:
-        ini.instring = list(
-            inputbox.ask(ini.screen, "Push a string to the stack"))
+        if not ini.ARGS.OUTPUT_MODE:
+            ini.instring = list(
+                inputbox.ask(ini.screen, "Push a string to the stack"))
+        else:
+            ini.instring = list(
+                input("Push a string to the stack: "))
         ini.instring.append(-1)
         ini.instring = ini.instring[::-1]
         ini.stackstack[-1].append(ord(ini.instring.pop()))
@@ -95,35 +99,45 @@ def read_int():
     Execution of the & instruction
     '''
     try:
-        ini.stackstack[-1].append(
-            int(inputbox.ask(ini.screen,
-                "Push a number to the stack")))
+        if not ini.ARGS.OUTPUT_MODE:
+            ini.stackstack[-1].append(
+                int(inputbox.ask(ini.screen,
+                    "Push a number to the stack")))
+        else:
+            ini.stackstack[-1].append(
+                int(input("Push a number to the stack: ")))
     except Exception:
         return
 
 
 def output_ascii():
     outtext = fp.chhr(pop(ini.stackstack[-1]))
-    if outtext == "\n":
-        ini._outline += 1
-        ini._outcount = -1
-        out = ini.stackfont.render("", 1, ini.STACK_OUTPUT_COLOR)
+    if not ini.ARGS.OUTPUT_MODE:
+        if outtext == "\n":
+            ini._outline += 1
+            ini._outcount = -1
+            out = ini.stackfont.render("", 1, ini.STACK_OUTPUT_COLOR)
+        else:
+            out = ini.stackfont.render(outtext, 1,
+                                       ini.STACK_OUTPUT_COLOR)
+        ini.outsurf.blit(
+            out, (ini.STACK_CHAR_WIDTH * ini._outcount,
+                  ini.STACK_CHAR_HEIGHT * ini._outline))
+        ini._outcount += len(outtext)
     else:
-        out = ini.stackfont.render(outtext, 1,
-                                   ini.STACK_OUTPUT_COLOR)
-    ini.outsurf.blit(
-        out, (ini.STACK_CHAR_WIDTH * ini._outcount,
-              ini.STACK_CHAR_HEIGHT * ini._outline))
-    ini._outcount += len(outtext)
+        print(outtext, end="")
 
 
 def output_int():
     outint = str(pop(ini.stackstack[-1]))
-    out = ini.stackfont.render(outint, 1, ini.STACK_OUTPUT_COLOR)
-    ini.outsurf.blit(
-        out, (ini.STACK_CHAR_WIDTH * ini._outcount,
-              ini.STACK_CHAR_HEIGHT * ini._outline))
-    ini._outcount += len(outint)
+    if not ini.ARGS.OUTPUT_MODE:
+        out = ini.stackfont.render(outint, 1, ini.STACK_OUTPUT_COLOR)
+        ini.outsurf.blit(
+            out, (ini.STACK_CHAR_WIDTH * ini._outcount,
+                  ini.STACK_CHAR_HEIGHT * ini._outline))
+        ini._outcount += len(outint)
+    else:
+        print(outint, end="")
 
 
 def do_instruction(character):
@@ -145,6 +159,9 @@ def do_instruction(character):
                     ["right", "down", "up", "left"])
             elif character == "@":
                 ini.pointer.stop()
+                if ini.ARGS.OUTPUT_MODE:
+                    print()
+                    exit()
             elif character in "0123456789":
                 ini.stackstack[-1].append(int(character))
             elif character in "abcdef":

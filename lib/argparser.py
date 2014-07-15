@@ -10,6 +10,8 @@ def parse_arguments():
                         help="specify the time between "
                         "each tick (default: 50 ms)",
                         default=50)
+    parser.add_argument("-o", action="store_true", dest="OUTPUT_MODE",
+                        help="only show the output of the program in the shell")
     parser.add_argument("befunge_file", action="store",
                         help="the full path to a befunge "
                         "file to be interpreted")

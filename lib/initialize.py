@@ -38,20 +38,21 @@ _step_once = False
 _reset = False
 
 # Pygame surface inits
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-background = pygame.Surface(screen.get_size()).convert()
-pointer_rect = pygame.Surface((CHAR_WIDTH, CHAR_HEIGHT), pygame.SRCALPHA)
-pointer_rect.fill(POINTER_COLOR)
-stacksurf = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT_MODIFIER),
-                           pygame.SRCALPHA)
-outsurf = pygame.Surface((int(float(SCREEN_WIDTH) / 2.0),
-                         SCREEN_HEIGHT_MODIFIER),
-                         pygame.SRCALPHA)
-pygame.display.set_caption("Befunge-98 Interpreter")
-# Pygame font inits
-pygame.font.init()
-stackfont = pygame.font.Font("../font/Inconsolata.otf", 18)
-codefont = pygame.font.Font("../font/Inconsolata.otf", 24)
+if not ARGS.OUTPUT_MODE:
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    background = pygame.Surface(screen.get_size()).convert()
+    pointer_rect = pygame.Surface((CHAR_WIDTH, CHAR_HEIGHT), pygame.SRCALPHA)
+    pointer_rect.fill(POINTER_COLOR)
+    stacksurf = pygame.Surface((SCREEN_WIDTH, SCREEN_HEIGHT_MODIFIER),
+                               pygame.SRCALPHA)
+    outsurf = pygame.Surface((int(float(SCREEN_WIDTH) / 2.0),
+                             SCREEN_HEIGHT_MODIFIER),
+                             pygame.SRCALPHA)
+    pygame.display.set_caption("Befunge-98 Interpreter")
+    # Pygame font inits
+    pygame.font.init()
+    stackfont = pygame.font.Font("../font/Inconsolata.otf", 18)
+    codefont = pygame.font.Font("../font/Inconsolata.otf", 24)
 
 # Global constants related to bf98.py
 _outcount = 0

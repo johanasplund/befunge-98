@@ -34,6 +34,7 @@ optional arguments:
 ## TODO
 - ~~Make the code more structured and/or clean up some~~
 - ~~Add output only mode~~
+- Add tests
 - Add the `y` instruction
 - Add the `t` instruction (aka Concurrent Befunge-98)
 - Add fingerprints
